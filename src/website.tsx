@@ -64,7 +64,7 @@ const EDUCATION: EducationEntry[] = [
     degree: "M.S. Computer Science",
     detail: "Expected May 2028",
     note: null,
-    logo: "/website/ut-austin.png",
+    logo: "/ut-austin.png",
     logoBg: "transparent",
   },
   {
@@ -73,7 +73,7 @@ const EDUCATION: EducationEntry[] = [
     degree: "B.S. Computer Science · B.S. Mathematics",
     detail: "May 2022",
     note: "Minor in Entrepreneurship",
-    logo: "/website/uw-madison.png",
+    logo: "/uw-madison.png",
     logoBg: "transparent",
   },
 ];
