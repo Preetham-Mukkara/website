@@ -215,23 +215,41 @@ export default function Portfolio() {
 
       {/* Hero */}
       <section id="about" style={{ minHeight:"100vh", padding:"56px clamp(24px,6vw,80px) 0", display:"flex", flexDirection:"column", justifyContent:"center", maxWidth:1000, margin:"0 auto" }}>
-        <div style={{ paddingTop:"8vh" }}>
-          <p className="a2 mono" style={{ fontSize:11, letterSpacing:"0.2em", textTransform:"uppercase", color:T.muted, marginBottom:24 }}>
-            Software Engineer · Fullstack
-          </p>
-          <h1 className="a1" style={{ fontSize:"clamp(48px,8.5vw,90px)", fontWeight:400, lineHeight:1.0, letterSpacing:"-0.02em", marginBottom:32, color:T.fg }}>
-            Preetham<br />Mukkara<span style={{ color:T.accent }}>.</span>
-          </h1>
-          <p className="a3 mono" style={{ fontSize:"clamp(14px,1.8vw,17px)", lineHeight:1.9, color:T.bodyMuted, maxWidth:540, marginBottom:48, fontWeight:300 }}>
-            Hi there! I'm Preetham, a software engineer who works on distributed systems,
-            spends weekends on PNW trails, and has been emotionally invested in the Minnesota Vikings for longer
-            than is medically advisable. Currently in Seattle, always in search of a good cup of coffee.
-          </p>
-          <div className="a4" style={{ display:"flex", gap:12, flexWrap:"wrap", alignItems:"center" }}>
-            <button className="btn-p" onClick={() => scrollTo("experience")}>View Experience</button>
-            <button className="larrow" onClick={() => scrollTo("contact")} style={{ marginLeft:10 }}>
-              Get in touch <span>→</span>
-            </button>
+        <div style={{ paddingTop:"8vh", display:"flex", alignItems:"center", justifyContent:"space-between", gap:48, flexWrap:"wrap" }}>
+          
+          <div style={{ flex:1, minWidth:280 }}>
+            <p className="a2 mono" style={{ fontSize:11, letterSpacing:"0.2em", textTransform:"uppercase", color:T.muted, marginBottom:24 }}>
+              Software Engineer · Fullstack
+            </p>
+            <h1 className="a1" style={{ fontSize:"clamp(48px,8.5vw,90px)", fontWeight:400, lineHeight:1.0, letterSpacing:"-0.02em", marginBottom:32, color:T.fg }}>
+              Preetham<br />Mukkara<span style={{ color:T.accent }}>.</span>
+            </h1>
+            <p className="a3 mono" style={{ fontSize:"clamp(14px,1.8vw,17px)", lineHeight:1.9, color:T.bodyMuted, maxWidth:540, marginBottom:48, fontWeight:300 }}>
+              Hi there! I'm Preetham, a software engineer who works on distributed systems,
+              spends weekends on PNW trails, and has been emotionally invested in the Minnesota Vikings for longer
+              than is medically advisable. Currently in Seattle, always in search of a good cup of coffee.
+            </p>
+            <div className="a4" style={{ display:"flex", gap:12, flexWrap:"wrap", alignItems:"center" }}>
+              <button className="btn-p" onClick={() => scrollTo("experience")}>View Experience</button>
+              <button className="larrow" onClick={() => scrollTo("contact")} style={{ marginLeft:10 }}>
+                Get in touch <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="a1" style={{ flexShrink:0 }}>
+            <img
+              src="/profile.jpg"
+              alt="Preetham Mukkara"
+              style={{
+                width: 220,
+                height: 220,
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: `3px solid ${T.subtle}`,
+                display: "block",
+              }}
+            />
           </div>
         </div>
         <div style={{ marginTop:"auto", paddingBottom:48, paddingTop:72 }}>
