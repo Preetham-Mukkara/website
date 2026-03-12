@@ -110,7 +110,7 @@ function useInView(threshold = 0.12): [React.RefObject<HTMLDivElement | null>, b
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, []);
+  }, [threshold]);
   return [ref, inView];
 }
 
@@ -157,8 +157,13 @@ export default function Portfolio() {
     setMenuOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+    await fetch("https://formspree.io/f/maqpokaj", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     setSent(true);
   };
 
