@@ -1,9 +1,3 @@
-/* ─── Fonts ─────────────────────────────────────────────────────────────────── */
-/* Add this to your index.html instead:
-   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-*/
-
-/* ─── Reset ──────────────────────────────────────────────────────────────────── */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -13,18 +7,14 @@
   html {
     scroll-behavior: smooth;
   }
-  
-  /* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
-  ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #4a7fa5; border-radius: 2px; }
   
-  /* ─── Utilities ──────────────────────────────────────────────────────────────── */
   .mono {
     font-family: 'DM Mono', monospace;
   }
   
-  /* ─── Nav links ──────────────────────────────────────────────────────────────── */
   .nl {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -44,7 +34,6 @@
     border-bottom: 1px solid #4a7fa5;
   }
   
-  /* ─── Chips & Tags ───────────────────────────────────────────────────────────── */
   .chip {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -67,7 +56,6 @@
     display: inline-block;
   }
   
-  /* ─── Buttons ────────────────────────────────────────────────────────────────── */
   .btn-p {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -82,7 +70,6 @@
   }
   .btn-p:hover { opacity: 0.82; }
   
-  /* ─── Form inputs ────────────────────────────────────────────────────────────── */
   input,
   textarea {
     font-family: 'DM Mono', monospace;
@@ -101,7 +88,6 @@
   input::placeholder,
   textarea::placeholder { color: #94a3b8; }
   
-  /* ─── Section label ──────────────────────────────────────────────────────────── */
   .slabel {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
@@ -111,7 +97,6 @@
     margin-bottom: 48px;
   }
   
-  /* ─── Arrow links ────────────────────────────────────────────────────────────── */
   .larrow {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -131,7 +116,6 @@
     gap: 10px;
   }
   
-  /* ─── Cards ──────────────────────────────────────────────────────────────────── */
   .job-card {
     border: 1px solid #cdd8e3;
     background: #f8fafc;
@@ -163,7 +147,6 @@
   }
   .edu-card:hover { border-color: #4a7fa540; }
   
-  /* ─── Logo ───────────────────────────────────────────────────────────────────── */
   .logo-wrap {
     width: 52px;
     height: 52px;
@@ -180,7 +163,6 @@
     object-fit: contain;
   }
   
-  /* ─── Seattle badge ──────────────────────────────────────────────────────────── */
   .seattle-badge {
     display: inline-flex;
     align-items: center;
@@ -195,7 +177,6 @@
     background: rgba(74, 127, 165, 0.08);
   }
   
-  /* ─── Animations ─────────────────────────────────────────────────────────────── */
   @keyframes fid {
     from { opacity: 0; transform: translateY(-10px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -205,10 +186,15 @@
   .a3 { animation: fid 0.8s ease 0.40s both; }
   .a4 { animation: fid 0.8s ease 0.52s both; }
   
-  /* ─── Responsive ─────────────────────────────────────────────────────────────── */
   @media (max-width: 720px) {
     .dnav { display: none !important; }
     .mmb  { display: flex !important; }
     .edu-card { flex-direction: column; gap: 16px; }
   }
   .mmb { display: none; }
+
+  @media (max-width: 720px) {
+    .profile-pic {
+      display: none;
+    }
+  }

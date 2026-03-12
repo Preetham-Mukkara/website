@@ -237,7 +237,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="a1" style={{ flexShrink:0 }}>
+          <div className="a1 profile-pic" style={{ flexShrink:0 }}>
             <img
               src="/profile.jpg"
               alt="Preetham Mukkara"
