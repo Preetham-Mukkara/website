@@ -3,8 +3,6 @@ import type { ReactNode } from "react";
 import "./website.css";
 import Particles from "./components/Particles";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 interface SkillGroup {
   category: string;
   items: string[];
@@ -34,7 +32,6 @@ interface FadeInProps {
   delay?: number;
 }
 
-// ─── Theme (module-level, static) ─────────────────────────────────────────────
 
 const T = {
   fg:         "#1a2030",
@@ -45,8 +42,6 @@ const T = {
   navBg:      "rgba(232,238,244,0.93)",
   bodyMuted:  "#5a7080",
 };
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_ITEMS = ["about", "education", "experience", "contact"] as const;
 type NavItem = typeof NAV_ITEMS[number];
@@ -105,8 +100,6 @@ const EXPERIENCE: ExperienceEntry[] = [
   },
 ];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
 function useInView(threshold = 0.12): [React.RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -136,8 +129,6 @@ function FadeIn({ children, delay = 0 }: FadeInProps) {
     </div>
   );
 }
-
-// ─── Main ─────────────────────────────────────────────────────────────────────
 
 export default function Portfolio() {
   const [active, setActive] = useState<NavItem>("about");
