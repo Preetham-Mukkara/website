@@ -1,3 +1,3 @@
 # Personal Website
 
-Served at https://preetham-mukkara.github.io/website/
+Served at https://preethammukkara.com
