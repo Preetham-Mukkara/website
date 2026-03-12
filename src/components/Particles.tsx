@@ -1,11 +1,21 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
-interface MousePosition { x: number; y: number; }
+interface MousePosition {
+  x: number;
+  y: number;
+}
 interface Circle {
-  x: number; y: number; translateX: number; translateY: number;
-  size: number; alpha: number; targetAlpha: number;
-  dx: number; dy: number; magnetism: number;
+  x: number;
+  y: number;
+  translateX: number;
+  translateY: number;
+  size: number;
+  alpha: number;
+  targetAlpha: number;
+  dx: number;
+  dy: number;
+  magnetism: number;
 }
 
 function useMousePosition(): MousePosition {
@@ -20,7 +30,11 @@ function useMousePosition(): MousePosition {
 
 function hexToRgb(hex: string): number[] {
   let n = hex.replace("#", "");
-  if (n.length === 3) n = n.split("").map(c => c + c).join("");
+  if (n.length === 3)
+    n = n
+      .split("")
+      .map((c) => c + c)
+      .join("");
   const h = Number.parseInt(n, 16);
   return [(h >> 16) & 255, (h >> 8) & 255, h & 255];
 }
@@ -78,7 +92,8 @@ export const Particles: React.FC<ParticlesProps> = ({
     return {
       x: Math.floor(Math.random() * canvasSize.current.w),
       y: Math.floor(Math.random() * canvasSize.current.h),
-      translateX: 0, translateY: 0,
+      translateX: 0,
+      translateY: 0,
       size: Math.floor(Math.random() * 2) + size,
       alpha: 0,
       targetAlpha: Number.parseFloat((Math.random() * 0.6 + 0.1).toFixed(1)),
@@ -116,7 +131,13 @@ export const Particles: React.FC<ParticlesProps> = ({
     drawParticles();
   }
 
-  function remapValue(value: number, start1: number, end1: number, start2: number, end2: number): number {
+  function remapValue(
+    value: number,
+    start1: number,
+    end1: number,
+    start2: number,
+    end2: number
+  ): number {
     const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
     return remapped > 0 ? remapped : 0;
   }
@@ -140,12 +161,16 @@ export const Particles: React.FC<ParticlesProps> = ({
       }
       circle.x += circle.dx + vx;
       circle.y += circle.dy + vy;
-      circle.translateX += (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease;
-      circle.translateY += (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
+      circle.translateX +=
+        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease;
+      circle.translateY +=
+        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
       drawCircle(circle, true);
       if (
-        circle.x < -circle.size || circle.x > canvasSize.current.w + circle.size ||
-        circle.y < -circle.size || circle.y > canvasSize.current.h + circle.size
+        circle.x < -circle.size ||
+        circle.x > canvasSize.current.w + circle.size ||
+        circle.y < -circle.size ||
+        circle.y > canvasSize.current.h + circle.size
       ) {
         circles.current.splice(i, 1);
         drawCircle(circleParams());
@@ -178,8 +203,12 @@ export const Particles: React.FC<ParticlesProps> = ({
     };
   }, [color]);
 
-  useEffect(() => { onMouseMove(); }, [mousePosition.x, mousePosition.y]);
-  useEffect(() => { initCanvas(); }, [refresh]);
+  useEffect(() => {
+    onMouseMove();
+  }, [mousePosition.x, mousePosition.y]);
+  useEffect(() => {
+    initCanvas();
+  }, [refresh]);
 
   return (
     <div
@@ -187,8 +216,15 @@ export const Particles: React.FC<ParticlesProps> = ({
       className={className}
       style={{ position: "fixed", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 0 }}
     >
-      <canvas style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} ref={canvasRef} />
-      {children && <div style={{ position: "relative", zIndex: 10, height: "100%", width: "100%" }}>{children}</div>}
+      <canvas
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        ref={canvasRef}
+      />
+      {children && (
+        <div style={{ position: "relative", zIndex: 10, height: "100%", width: "100%" }}>
+          {children}
+        </div>
+      )}
     </div>
   );
 };
