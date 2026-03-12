@@ -64,7 +64,7 @@ const EDUCATION: EducationEntry[] = [
     degree: "M.S. Computer Science",
     detail: "Expected May 2028",
     note: null,
-    logo: "/website/ut-austin.gif",
+    logo: "/website/ut-austin.png",
     logoBg: "transparent",
   },
   {
@@ -335,7 +335,7 @@ export default function Portfolio() {
         </FadeIn>
         <FadeIn delay={0.2}>
           <p className="mono" style={{ fontSize:13, color:T.muted, lineHeight:1.8, maxWidth:400, marginBottom:52 }}>
-            Open to new opportunities, interesting problems, and meaningful collaborations. Probably on a coffee walk around Greenlake.
+            Open to new opportunities, interesting problems, and meaningful collaborations.
           </p>
         </FadeIn>
         {sent ? (
