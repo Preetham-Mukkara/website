@@ -64,7 +64,7 @@ const EDUCATION: EducationEntry[] = [
     degree: "M.S. Computer Science",
     detail: "Expected May 2028",
     note: null,
-    logo: "/ut-austin.gif",
+    logo: "/website/ut-austin.gif",
     logoBg: "transparent",
   },
   {
@@ -73,7 +73,7 @@ const EDUCATION: EducationEntry[] = [
     degree: "B.S. Computer Science · B.S. Mathematics",
     detail: "May 2022",
     note: "Minor in Entrepreneurship",
-    logo: "/uw-madison.png",
+    logo: "/website/uw-madison.png",
     logoBg: "transparent",
   },
 ];
@@ -227,7 +227,7 @@ export default function Portfolio() {
             Preetham<br />Mukkara<span style={{ color:T.accent }}>.</span>
           </h1>
           <p className="a3 mono" style={{ fontSize:"clamp(14px,1.8vw,17px)", lineHeight:1.9, color:T.bodyMuted, maxWidth:540, marginBottom:48, fontWeight:300 }}>
-            Hi there! I'm Preetham, a backend engineer who works on distributed systems,
+            Hi there! I'm Preetham, a software engineer who works on distributed systems,
             spends weekends on PNW trails, and has been emotionally invested in the Minnesota Vikings for longer
             than is medically advisable. Currently in Seattle, always in search of a good cup of coffee.
           </p>
